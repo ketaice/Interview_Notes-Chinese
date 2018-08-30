@@ -8,6 +8,7 @@ Index
 - [自动更新目录](#自动更新目录)
 - [图片居中](#图片居中)
 - [隐藏代码块](#隐藏代码块)
+- [Latex 公式](#latex-公式)
 
 <!-- /TOC -->
 
@@ -32,4 +33,39 @@ Index
 // 代码块，注意上下都要保留空行
 
 </details>
+```
+
+## Latex 公式
+> 在线 LaTeX 公式编辑器 http://www.codecogs.com/latex/eqneditor.php
+
+**斜体加粗**
+```
+\boldsymbol{x}
+```
+**期望**
+```
+\mathbb{E}
+```
+**矩阵对齐**
+```
+\begin{array}{ll}
+ & \\
+ & \\
+\end{array}
+```
+**转置**
+```
+^\mathsf{T}
+```
+**省略号**
+```
+水平方向    \cdots   
+竖直方向    \vdots   
+对角线方向  \ddots
+```
+**按元素相乘**
+```
+\circ
+或
+\odot
 ```

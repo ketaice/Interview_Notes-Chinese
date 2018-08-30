@@ -8,12 +8,13 @@ __*/
 out/
 
 # file
+-*
 *.zip
 *.tgz
 _test*.py
-_ToDo.md
 Untitled.ipynb
 MyCV.pdf
+MyCV.md
 GSD_*.pdf
 
 # root

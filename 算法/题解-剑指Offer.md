@@ -702,9 +702,42 @@ public:
         int lo = 0;
         int hi = rotateArray.size() - 1;
 
-        // 完全旋转，或者说没有旋转（不需要）
-        //if (rotateArray[lo] < rotateArray[hi])
-        //   return rotateArray[lo];
+        // 完全旋转，或者说没有旋转（需要, e.g {1, 2}）
+        if (rotateArray[lo] < rotateArray[hi])
+           return rotateArray[lo];
+
+        while (lo + 1 < hi) {
+            int mid = lo + (hi - lo) / 2;
+
+            if (rotateArray[mid] > rotateArray[hi])
+                lo = mid;
+            else if (rotateArray[mid] < rotateArray[hi])
+                hi = mid;
+            else
+                hi--;         // 防止这种情况 {3,4,5,1,2,3}
+        }
+        
+        return rotateArray[hi];
+    }
+};
+```
+
+**Code（改进）**
+```C++
+class Solution {
+public:
+    int minNumberInRotateArray(vector<int> rotateArray) {
+        if (rotateArray.empty())
+            return 0;
+
+        int n = rotateArray.size();
+
+        // 没有旋转的情况
+        //if (rotateArray[0] < rotateArray[n-1])
+        //    return rotateArray[lo];
+
+        int lo = -1;    // 如果初始化为 0 将无法处理 n == 2 的情况，初始化为 -1 就可以了
+        int hi = n - 1;
 
         while (lo + 1 < hi) {
             int mid = lo + (hi - lo) / 2;
